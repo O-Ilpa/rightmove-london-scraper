@@ -13,12 +13,6 @@ function extractImages(property) {
     }));
 }
 
-function buildPropertyUrl(propertyUrl) {
-  if (!propertyUrl) return null;
-  if (propertyUrl.startsWith('/')) return `${BASE_URL}${propertyUrl}`;
-  return propertyUrl;
-}
-
 export function parseListing(property) {
   const images = extractImages(property);
 
