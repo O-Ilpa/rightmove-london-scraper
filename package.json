@@ -1,0 +1,20 @@
+{
+  "name": "rightmove-london-scraper",
+  "version": "1.0.0",
+  "description": "Rightmove London BUY listings scraper",
+  "type": "module",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "start": "node src/index.js",
+    "scrape:csv": "node src/csv.js",
+    "lint": "node --check src/index.js && node --check src/csv.js && node --check src/db.js && node --check src/scraper/utils.js && node --check src/scraper/rightmoveClient.js && node --check src/scraper/parseListing.js && node --check src/scraper/scrapeLondon.js && node --check src/storage/csvWriter.js && node --check src/models/Listing.js"
+  },
+  "dependencies": {
+    "csv-parse": "^7.0.0",
+    "csv-stringify": "^6.8.0",
+    "dotenv": "^16.4.7",
+    "mongoose": "^8.9.3"
+  }
+}
