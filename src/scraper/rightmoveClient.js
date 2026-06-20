@@ -4,9 +4,8 @@ const LONDON_BUY_SEARCH_URL =
 export async function fetchRightmovePage(index) {
   const response = await fetch(`${LONDON_BUY_SEARCH_URL}${index}`);
 
-  if (response.status === 403) {
-    const err = new Error("Rightmove returned 403, access blocked");
-    err.code = "blocked";
+  if (response.status === 400) {
+    const err = new Error("Rightmove returned 400 bad request --> no more results.");
     throw err;
   }
 
